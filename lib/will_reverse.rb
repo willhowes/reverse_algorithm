@@ -1,14 +1,12 @@
 class Array
 
   def will_reverse
-
-    if self.length > 1
-      if self.length % 2 == 0
-        self[0], self[1] = self[1], self[0]
-      else
-      self[-1], self[0] = self[0], self[-1]
-      end
+    i = 1
+    middle_element = self.length / 2
+    until i == middle_element + 1
+      self[i-1], self[i * -1] = self[i * -1], self[i-1]
+      i += 1
     end
-    self
+    return self
   end
 end
